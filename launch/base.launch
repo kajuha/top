@@ -1,0 +1,6 @@
+<launch>
+    <arg name="message_display" default="screen" doc="output type"/>
+
+	<node pkg="top" type="top" name="top" output="$(arg message_display)">
+	</node>
+</launch>

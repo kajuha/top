@@ -1,0 +1,81 @@
+<launch>
+
+
+<!-- md-1k -->
+  <include file="$(find mecanum)/launch/base_pallete_can.launch">
+    <arg name="message_display" value="screen"/>
+    <arg name="timeout_sec" value="0.3"/>
+  </include>
+  <!-- <include file="$(find mecanum)/launch/tf_pallete.launch" /> -->
+
+
+<!-- mw_ahrsv1 -->
+  <!-- <include file="$(find mw_ahrsv1)/launch/base.launch">
+    <arg name="message_display" value="log"/>
+  </include> -->
+
+
+<!-- tfmini -->  
+  <!-- <include file="$(find tfmini)/launch/base_tfmini.launch">
+    <arg name="message_display" value="log"/>
+    <arg name="timeout_sec" value="0.3"/>
+  </include>
+  <include file="$(find tfmini)/launch/tf_tfmini.launch" /> -->
+
+  
+<!-- rplidar -->
+  <!-- <include file="$(find rplidar_ros)/launch/rplidar_a1m8.launch" />
+    <arg name="message_display" value="log"/> -->
+
+
+<!-- mt4n -->
+  <!-- <include file="$(find mt4n)/launch/base.launch">
+    <arg name="message_display" value="log"/>
+  </include> -->
+
+
+<!-- chatterbox -->
+	<include file="$(find chatterbox)/launch/base_joystick.launch">
+    <arg name="message_display" value="log"/>
+    <!-- <arg name="message_display" value="screen"/> -->
+	</include>
+  
+	<include file="$(find chatterbox)/launch/base_web.launch">
+    <arg name="message_display" value="log"/>
+    <!-- <arg name="message_display" value="screen"/> -->
+	</include>
+
+	<include file="$(find chatterbox)/launch/server_web.launch">
+    <arg name="message_display" value="log"/>
+    <!-- <arg name="message_display" value="screen"/> -->
+    <arg name="user_name" value="$(env USER)"/>
+	</include>
+
+  <include file="$(find chatterbox)/launch/base_remote.launch">
+    <arg name="message_display" value="log"/>
+    <!-- <arg name="message_display" value="screen"/> -->
+  </include>
+
+
+<!-- arduino safety -->
+  <!-- <include file="$(find arduino_safety)/launch/base.launch">
+    <arg name="message_display" value="log"/>
+  </include> -->
+
+<!-- recipelab -->
+  <include file="$(find recipelab)/launch/base_pallete.launch">
+    <arg name="message_display" value="screen"/>
+    <!-- <arg name="message_display" value="log"/> -->
+    <arg name="remap_cmd_vel" value="/recipelab/cmd_vel"/>
+  </include>
+
+<!-- top -->
+  <include file="$(find top)/launch/base.launch">
+    <arg name="message_display" value="screen"/>
+    <!-- <arg name="message_display" value="log"/> -->
+  </include>
+
+
+<!-- rviz -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find top)/rviz/view_pallete.rviz" /> -->
+</launch>
